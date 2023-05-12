@@ -1,0 +1,261 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button {
+    position: relative;
+    text-decoration: none;
+    color: #272727;
+    border-color: #272727;
+    border-style: solid;
+    padding: 25px 40px;
+    font-size: 24px;
+    text-align: center;
+    min-width: 80px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+
+    overflow: hidden;
+}
+
+/* ROTATE */
+
+.rotate {
+    
+}
+
+.rotate::after {
+    content: "";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff200;
+    transition: transform ease-in 0.4s;
+    transform: rotate(-90deg);
+    transform-origin: 0 100%;
+}
+
+.rotate:hover::after {
+    transform: rotate(0deg);
+}
+
+/* SLIDE */
+
+.slide {
+    transition: color 0.6s;
+    border-color: #351435;
+    border-width: 2px;
+    color: #351435;
+}
+
+.slide::after {
+    content: "";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #351435;
+    transition: transform 0.4s ease-in;
+    transform:translateX(-100%);
+}
+
+.slide:hover {
+    color: #ffffff;
+}
+
+.slide:hover::after {
+    transform:translateX(0%);
+}
+
+/* CROSS */
+
+.cross {
+    transition: color 0.8s ease;
+    border-color: #272727;
+    color: #272727;
+}
+
+.cross:hover {
+    color: #ffffff;
+}
+
+.cross::after {
+    content: "";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #272727;
+    transition: transform 0.8s ease;
+    transform: rotateY(90deg);
+}
+
+.cross:hover::after {
+    transform: rotateY(0);
+}
+
+.cross::before {
+    content: "";
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #272727;
+    transition: transform 0.8s ease;
+    transform: rotateX(90deg);
+}
+
+.cross:hover::before {
+    transform: rotateX(0);
+}
+
+/* ZOOM */
+
+.zoom {
+    color: #ff2222;
+    border-color: #ff2222;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    border-width: 2px;
+    transition: transform 0.2s ease, letter-spacing 0.2s ease, border-width 0.2s ease, font-weight 0.2s ease;
+}
+
+.zoom:hover {
+    letter-spacing: 10px;
+    border-width: 7px;
+    transform: scaleX(1.1);
+    font-weight: 900;
+}
+
+/* SLIDE CONTENT */
+
+.canvas {
+    width: 310px;
+    height: 150px;
+    background-color: #424242;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-content {
+    border-color: #ffffff;
+    color: #ffffff;
+    transition: color 0.6s;
+}
+
+.slide-content::after {
+    content: "Yahoo!";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f44336;
+    transition: transform 0.4s ease-in;
+    transform:translateY(-100%);
+    font-weight: 900;
+}
+
+.slide-content:hover::after {
+    transform:translateY(0%);
+}
+
+/* GLOWING */
+
+.glowing {
+    border-color: #ffffff;
+    color: #ffffff;
+    transition: background-color 0.3s linear;
+}
+
+.glowing::after {
+    content: "";
+    top: 30%;
+    left: -100%;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    background-color: #fff;
+    transition: left 0.3s linear;
+    transform:rotate(45deg);
+    font-weight: 900;
+}
+
+.glowing:hover::after {
+    left:100%;
+}
+
+.glowing:hover {
+    background-color: #f44336;
+}
+
+/* CROSS-MOVE */
+
+.cross-move {
+    transition: color 0.8s ease;
+    border-color: #424242;
+    background-color: #424242;
+    color: transparent;
+}
+
+.cross-move::after {
+    content: "Cross Move";
+    color: #424242;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: -100%;
+    left: -100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fffa6b;
+    transition: left 0.5s linear, bottom 0.5s linear;
+}
+
+.cross-move::before {
+    content: "Cross Move";
+    color: #424242;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0%;
+    left: 0%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fffa6b;
+    transition: left 0.5s linear, bottom 0.5s linear;
+}
+
+.cross-move:hover::before {
+    bottom: 100%;
+    left: 100%;
+}
+
+.cross-move:hover::after {
+    bottom: 0%;
+    left: 0%;
+}
